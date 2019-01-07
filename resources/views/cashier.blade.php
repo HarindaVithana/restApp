@@ -36,6 +36,8 @@
         .menu-container {
         display: flex;
         flex-wrap: wrap;
+        }.btn-item{
+            width: min-content;
         }
     </style>    
 </head>

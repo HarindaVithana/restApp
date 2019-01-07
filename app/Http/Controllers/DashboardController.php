@@ -361,7 +361,7 @@ class DashboardController extends Controller
         $weeksbetween1 =array();
         for($i = 1; $i <= $weeks1; $i++){    
             
-            $week = $date1->format("W");
+            $week = $date1e->format("W");
             $date1e->add(new DateInterval('P4D'));
             $week." = ".$firstweek1." - ".$date1e->format('Y-m-d')."<br/>";
            
@@ -570,8 +570,8 @@ class DashboardController extends Controller
         </tr>
        
         
-        <input type="hidden" id="startdate" value="'.$startday.'">
-        <input type="hidden" id="enddate" value="'.$endday.'">';
+        <input type="hidden" id="startdate1" value="'.$startday.'">
+        <input type="hidden" id="enddate1" value="'.$endday.'">';
         $total += $netexpense[$index];
         }     
         $output .= '</tbody>

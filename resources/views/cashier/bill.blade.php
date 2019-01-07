@@ -35,7 +35,7 @@
                     <div class="menu-container">
                         @foreach($shorteats as $shrt)                    
                         <div>
-                            <a href="#" onclick="order('{{$shrt->dish_name}}')" class="btn btn-li btn-lg"> {{$shrt->dish_name}}</a>          
+                            <a href="#" onclick="order('{{$shrt->dish_name}}')" class="btn btn-li btn-lg btn-item"> {{$shrt->dish_name}}</a>          
                         </div>
                         @endforeach  
                     </div>
@@ -47,7 +47,7 @@
                     <div class="menu-container">
                         @foreach($rice as $ric)                    
                             <div>
-                                <a href="#" onclick="order('{{$ric->dish_name}}')" class="btn btn-li btn-lg"> {{$ric->dish_name}}</a>          
+                                <a href="#" onclick="order('{{$ric->dish_name}}')" class="btn btn-li btn-lg btn-item"> {{$ric->dish_name}}</a>          
                             </div>
                         @endforeach  
                     </div>              
@@ -58,7 +58,7 @@
                     <div class="menu-container">
                         @foreach($noodles as $noo)                    
                             <div>
-                                <a href="#" onclick="order('{{$noo->dish_name}}')" class="btn btn-li btn-lg"> {{$noo->dish_name}}</a>          
+                                <a href="#" onclick="order('{{$noo->dish_name}}')" class="btn btn-li btn-lg btn-item"> {{$noo->dish_name}}</a>          
                             </div>
                         @endforeach  
                     </div>              
@@ -71,7 +71,7 @@
                     <div class="menu-container">
                         @foreach($soup as $sp)                    
                             <div>
-                                <a href="#" onclick="order('{{$sp->dish_name}}')" class="btn btn-li btn-lg"> {{$sp->dish_name}}</a>          
+                                <a href="#" onclick="order('{{$sp->dish_name}}')" class="btn btn-li btn-lg btn-item"> {{$sp->dish_name}}</a>          
                             </div>
                         @endforeach 
                     </div>               
@@ -82,7 +82,7 @@
                     <div class="menu-container">
                         @foreach($beverages as $bev)                    
                             <div>
-                                <a href="#" onclick="order('{{$bev->dish_name}}')" class="btn btn-li btn-lg"> {{$bev->dish_name}}</a>          
+                                <a href="#" onclick="order('{{$bev->dish_name}}')" class="btn btn-li btn-lg btn-item"> {{$bev->dish_name}}</a>          
                             </div>
                         @endforeach   
                     </div>                 

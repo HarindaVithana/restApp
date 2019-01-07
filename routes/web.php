@@ -29,6 +29,8 @@ Route::post('/inventory/pricetable', 'DashboardController@pricetable')->name('Da
 Route::post('/admin/expensetable', 'DashboardController@expensetable')->name('DashboardController.expensetable');
 Route::get('/cashier','BillController@index');
 
+Route::get('/admin/expenseview', 'ExpenseController@expenseIndex');
+
 Route::get('/accountant/setprice','PriceController@setPrice');
 Route::get('/accountant','DashboardController@accountIndex');
 Route::get('/accountant/order','OrderController@index')->name('OrderController.index');

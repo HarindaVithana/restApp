@@ -137,7 +137,7 @@
 {{-- expense table --}}    
 <div class="card mb-5">        
     <div class="card-body">
-        <h1 class="card-title mt-3">Expese Data <span class="ml-3 mr-3" id="weekstartselect1"></span> <span id="to" style="display:none">To</span> <span class="ml-3" id="weekendselect1"></span></h1>
+        <h1 class="card-title mt-3">Expese Data <span class="ml-3 mr-3" id="weekstartselect1"></span> <span id="to1" style="display:none">To</span> <span class="ml-3" id="weekendselect1"></span></h1>
         <div class="row mt-5">
             <div class="col-sm-2.5 ml-4 mr-3" style="width:174px;">
                 <div class="dropdown">        
@@ -175,7 +175,7 @@
             </div>
             <div class="col-sm-2.5 ml-5" style="margin-top:-18px">
                 <div class="md-form">
-                    <a class="btn btn-primary" onclick=" expensetablemake(document.getElementById('strt_date').value,document.getElementById('end_date').value)">Custom Search</a>
+                    <a class="btn btn-primary" onclick=" expensetablemake(document.getElementById('strt_date1').value,document.getElementById('end_date1').value)">Custom Search</a>
                   </div>
             </div>
         </div>        
@@ -200,6 +200,8 @@
                     </tr>
                 </thead>
                 <tbody>{{ csrf_field() }}  
+                    <div style="display:none">
+                    @php($total1 =0);  </div>
                     @foreach($expensetable as $index => $expense)
                     <tr>
                         <td> {{$expense->vendor_id}} </td>
@@ -207,10 +209,10 @@
                         <td> {{$expense->foodItem}} </td>  
                         <td> {{json_encode($unitpriceData[$index],JSON_NUMERIC_CHECK)}} </td>  
                         <td> {{json_encode($noOfUnits[$index],JSON_NUMERIC_CHECK)}} </td>  
-                        <td> {{json_encode($netexpense[$index],JSON_NUMERIC_CHECK)}} </td>  
-                       
-                                                            
+                        <td> {{json_encode($netexpense[$index],JSON_NUMERIC_CHECK)}} </td>                                                        
                     </tr>
+                    <div style="display:none">
+                    {{$total1 += json_encode($netexpense[$index],JSON_NUMERIC_CHECK)}}</div>
                     @endforeach
                 </tbody>
                 <tfoot>
@@ -231,12 +233,22 @@
                     </tr>
                 </tfoot>
             </table>
+            <h2>Total income - Rs.{{$total1}}</h2>
         </div>            
 
     </div>
 </div>     
  <script>
    $(document).ready(function () {
+       // Data Picker Initialization
+       $('.datepicker').pickadate({
+            // Escape any “rule” characters with an exclamation mark (!).
+            format: 'yyyy-mm-dd',
+            formatSubmit: 'yyyy/mm/dd',
+            hiddenPrefix: 'prefix__',
+            hiddenSuffix: '__suffix'
+        });
+
         // pricetable
         $('#pricetable').dataTable({
             "aLengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
@@ -359,7 +371,7 @@
                 $('.tohide2').fadeOut();           
                 $('#expensetabledata').html(data.output); 
                 //weekstabledata = data.output;
-                document.getElementById('to').style.display='inline';                 
+                document.getElementById('to1').style.display='inline';                 
                 $('#weekstartselect1').html(document.getElementById('startdate').value );
                 $('#weekendselect1').html(document.getElementById('enddate').value);
 

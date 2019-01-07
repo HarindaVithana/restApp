@@ -121,7 +121,9 @@
                     <a href="{{url('/admin/employees')}}" class="list-group-item list-group-item-action waves-effect">
                         <i class="fa fa-map mr-3"></i>Manage Employees</a>    
                     <a href="{{url('/checkfood')}}" class="list-group-item list-group-item-action waves-effect">
-                        <i class="fa fa-check-square-o mr-3"></i>Check Food Items</a>               
+                        <i class="fa fa-check-square-o mr-3"></i>Check Food Items</a>     
+                    <a href="{{url('/admin/expenseview')}}" class="list-group-item list-group-item-action waves-effect">
+                        <i class="fa fa-pie-chart mr-3"></i>View Expenses</a>                
                 </div>
     
             </div>
